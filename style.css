@@ -1,48 +1,58 @@
-/* Nadiifinta margins-ka caadiga ah iyo qaabaynta guud */
-* {
-  box-sizing: border-box;
+/* In la baabi'iyo meelaha bannaan ee dabiiciga ah */
+body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  background-color: #f4f;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #3ff;
-  color: #333;
-  padding: 20px;
-}
-
-/* Magaca sare ee bogga */
-.title {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #2c3e50;
-  font-size: 2.5rem;
-}
-
-/* Weelka sawirada xajinaya (Grid System) */
-.gallery {
-  display: grid;
-  /* Wuxuu si automatic ah sawirada ugu habaynayaa shaashada (Responsive) */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px; /* Masaafada ay sawiradu isu jiran */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Qaabaynta sawirada shaqsiga ah */
-.gallery img {
+/* Weelka heysta videoga si uu screen-ka sare u wada qabsado */
+.video-container {
+  position: relative;
   width: 100%;
-  height: 250px;
-  object-fit: cover; /* Si sawirku u dhex fadhiisto isagoon d dhalanrogmin */
-  border-radius: 12px; /* Geesaha oo la wareejiyay */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hoos jilicsan */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Saamaynta marka cursor-ka la dul dhigo */
-  cursor: pointer;
+  height: 60vh; /* Tani waxay ka dhigeysaa in 60% screen-ka sare uu videogu qabsado */
+  overflow: hidden;
 }
 
-/* Marka la dul istaago sawirka (Hover Effect) */
-.gallery img:hover {
-  transform: translateY(-5px); /* Waxyar buu kor u kacayaa */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hooska ayaa weynaanaya */
+#background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Tani waxay videoga ka dhigeysaa inuu buuxiyo meesha isagoon xumaan */
+}
+
+/* Qoraalka "Walaalke Husen" oo la saarayo videoga dushiisa */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Hoos madow oo khafiif ah si qoraalku u daloosho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* Qaybta sawirrada ee ka hooseysa videoga */
+.gallery {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
